@@ -329,7 +329,7 @@
 #define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
-  #define PSU_ACTIVE_STATE LOW      // Set 'LOW' for ATX, 'HIGH' for X-Box
+  #define PSU_ACTIVE_STATE HIGH      // Set 'LOW' for ATX, 'HIGH' for X-Box
 
   //#define PSU_DEFAULT_OFF         // Keep power off until enabled directly with M80
   //#define PSU_POWERUP_DELAY 250   // (ms) Delay for the PSU to warm up to full power
@@ -1985,6 +1985,9 @@
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
 #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define ST7920_DELAY_1 DELAY_NS(0)
+#define ST7920_DELAY_2 DELAY_NS(250)
+#define ST7920_DELAY_3 DELAY_NS(250)
 
 //
 // ReprapWorld Graphical LCD
