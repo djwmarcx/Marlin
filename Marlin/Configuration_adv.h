@@ -640,8 +640,8 @@
  *   This F value is only to protect the hardware from an absence of configuration
  *   and not to complete it when users are not aware that the frequency must be specifically set to support the target board.
  *
- *   NOTE: Setting very low frequencies (< 10 Hz) may result in unexpected timer behavior.
- *         Setting very high frequencies can damage your hardware.
+ *   NOTE: Setting very low frequencies (< 10 Hz) may result in unexpected timer
+ * behavior. Setting very high frequencies can damage your hardware.
  *
  * USE_OCR2A_AS_TOP [undefined by default]
  *   Boards that use TIMER2 for PWM have limitations resulting in only a few possible frequencies on TIMER2:
@@ -832,8 +832,8 @@
   // This is the default power-up mode which can be changed later using M605 S<mode>.
   #define DEFAULT_DUAL_X_CARRIAGE_MODE DXC_AUTO_PARK_MODE
 
-  // Default x offset in duplication mode (typically set to half print bed width)
-  #define DEFAULT_DUPLICATION_X_OFFSET 100
+// Default x offset in duplication mode (typically set to half print bed width)
+#define DEFAULT_DUPLICATION_X_OFFSET 100
 
   // Default action to execute following M605 mode change commands. Typically G28X to apply new mode.
   //#define EVENT_GCODE_IDEX_AFTER_MODECHANGE "G28X"
@@ -1428,9 +1428,10 @@
  *    M908 - BQ_ZUM_MEGA_3D, RAMBO, PRINTRBOARD_REVF, RIGIDBOARD_V2 & SCOOVO_X9H
  *    M909, M910 & LCD - only PRINTRBOARD_REVF & RIGIDBOARD_V2
  */
-//#define PWM_MOTOR_CURRENT { 1300, 1300, 1250 }          // Values in milliamps
-//#define DIGIPOT_MOTOR_CURRENT { 135,135,135,135,135 }   // Values 0-255 (RAMBO 135 = ~0.75A, 185 = ~1A)
-//#define DAC_MOTOR_CURRENT_DEFAULT { 70, 80, 90, 80 }    // Default drive percent - X, Y, Z, E axis
+//#define PWM_MOTOR_CURRENT { 1300, 1300, 1250 }          // Values in
+//  milliamps #define DIGIPOT_MOTOR_CURRENT { 135,135,135,135,135 }   // Values
+//  0-255 (RAMBO 135 = ~0.75A, 185 = ~1A) #define DAC_MOTOR_CURRENT_DEFAULT {
+//  70, 80, 90, 80 }    // Default drive percent - X, Y, Z, E axis
 
 /**
  * I2C-based DIGIPOTs (e.g., Azteeg X3 Pro)
@@ -2673,7 +2674,8 @@
  */
 //#define REALTIME_REPORTING_COMMANDS
 #if ENABLED(REALTIME_REPORTING_COMMANDS)
-  //#define FULL_REPORT_TO_HOST_FEATURE   // Auto-report the machine status like Grbl CNC
+//#define FULL_REPORT_TO_HOST_FEATURE   // Auto-report the machine status like
+//  Grbl CNC
 #endif
 
 /**
@@ -2852,11 +2854,11 @@
       //#define MIGRATION_FS_EXTRA_PRIME    0 // (mm) Extra priming length
       //#define MIGRATION_FS_WIPE_RETRACT   0 // (mm) Retract before cooling for less stringing, better wipe, etc.
 
-      // Cool after prime to reduce stringing
-      //#define MIGRATION_FS_FAN_SPEED    255 // 0-255
-      //#define MIGRATION_FS_FAN_TIME       0 // (seconds)
-    #endif
-  #endif
+// Cool after prime to reduce stringing
+//#define MIGRATION_FS_FAN_SPEED    255 // 0-255
+//#define MIGRATION_FS_FAN_TIME       0 // (seconds)
+#endif
+#endif
 
   /**
    * Position to park head during tool change.
@@ -3434,7 +3436,7 @@
     //#define IMPROVE_HOMING_RELIABILITY
   #endif
 
-  // @section tmc/config
+// @section tmc/config
 
   /**
    * TMC Homing stepper phase.
@@ -4500,7 +4502,8 @@
 //#define DIRECT_PIN_CONTROL
 
 //
-// M43 - display pin status, toggle pins, watch pins, watch endstops & toggle LED, test servo probe
+// M43 - display pin status, toggle pins, watch pins, watch endstops & toggle
+// LED, test servo probe
 //
 //#define PINS_DEBUGGING
 

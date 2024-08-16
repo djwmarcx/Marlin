@@ -585,8 +585,10 @@
 
 // Resistor values when using MAX31865 sensors (-5) on TEMP_SENSOR_0 / 1
 #if TEMP_SENSOR_IS_MAX_TC(0)
-  #define MAX31865_SENSOR_OHMS_0      100 // (Ω) Typically 100 or 1000 (PT100 or PT1000)
-  #define MAX31865_CALIBRATION_OHMS_0 430 // (Ω) Typically 430 for Adafruit PT100; 4300 for Adafruit PT1000
+  #define MAX31865_SENSOR_OHMS_0                                                 \
+    100 // (Ω) Typically 100 or 1000 (PT100 or PT1000)
+  #define MAX31865_CALIBRATION_OHMS_0                                            \
+    430 // (Ω) Typically 430 for Adafruit PT100; 4300 for Adafruit PT1000
 #endif
 #if TEMP_SENSOR_IS_MAX_TC(1)
   #define MAX31865_SENSOR_OHMS_1      100
@@ -704,7 +706,8 @@
     #define DEFAULT_Kd 114.00
   #endif
 #else
-  #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
+  #define BANG_MAX                                                               \
+    255 // Limit hotend current while in bang-bang mode; 255=full current
 #endif
 
 /**
@@ -1086,9 +1089,10 @@
  * Movements very close to the center of the polar axis take more time than others.
  * This brief delay results in more material deposition due to the pressure in the nozzle.
  *
- * Current Kinematics and feedrate scaling deals with this by making the movement as fast
- * as possible. It works for slow movements but doesn't work well with fast ones. A more
- * complicated extrusion compensation must be implemented.
+ * Current Kinematics and feedrate scaling deals with this by making the
+ * movement as fast as possible. It works for slow movements but doesn't work
+ * well with fast ones. A more complicated extrusion compensation must be
+ * implemented.
  *
  * Ideally, it should estimate that a long rotation near the center is ahead and will cause
  * unwanted deposition. Therefore it can compensate the extrusion beforehand.
@@ -1550,8 +1554,8 @@
   #define Z_PROBE_ALLEN_KEY_STOW_1 { -64.0, 56.0, 23.0 } // Move the probe into position
   #define Z_PROBE_ALLEN_KEY_STOW_1_FEEDRATE XY_PROBE_FEEDRATE
 
-  #define Z_PROBE_ALLEN_KEY_STOW_2 { -64.0, 56.0, 3.0 } // Push it down
-  #define Z_PROBE_ALLEN_KEY_STOW_2_FEEDRATE (XY_PROBE_FEEDRATE)/10
+  #define Z_PROBE_ALLEN_KEY_STOW_2 {-64.0, 56.0, 3.0} // Push it down
+  #define Z_PROBE_ALLEN_KEY_STOW_2_FEEDRATE (XY_PROBE_FEEDRATE) / 10
 
   #define Z_PROBE_ALLEN_KEY_STOW_3 { -64.0, 56.0, 50.0 } // Move it up to clear
   #define Z_PROBE_ALLEN_KEY_STOW_3_FEEDRATE XY_PROBE_FEEDRATE
@@ -2760,7 +2764,8 @@
 //
 // Encoder EMI Noise Filter
 //
-// This option increases encoder samples to filter out phantom encoder clicks caused by EMI noise.
+// This option increases encoder samples to filter out phantom encoder clicks
+// caused by EMI noise.
 //
 //#define ENCODER_NOISE_FILTER
 #if ENABLED(ENCODER_NOISE_FILTER)
@@ -3216,7 +3221,8 @@
  *  - Copy the downloaded DWIN_SET folder to the SD card.
  *
  * E3S1PRO (T5L)
- *  - Download https://github.com/CrealityOfficial/Ender-3S1/archive/3S1_Plus_Screen.zip
+ *  - Download
+ * https://github.com/CrealityOfficial/Ender-3S1/archive/3S1_Plus_Screen.zip
  *  - Copy the downloaded DWIN_SET folder to the SD card.
  *
  * Flash display with DGUS Displays for Marlin:
@@ -3485,7 +3491,8 @@
 // https://reprapworld.com/products/electronics/ramps/keypad_v1_0_fully_assembled/
 //
 //#define REPRAPWORLD_KEYPAD
-//#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0 // (mm) Distance to move per key-press
+//#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0 // (mm) Distance to move per
+// key-press
 
 //
 // EasyThreeD ET-4000+ with button input and status LED
