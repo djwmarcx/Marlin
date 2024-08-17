@@ -3415,6 +3415,7 @@
    * @section tmc/stallguard
    */
   //#define SENSORLESS_HOMING // StallGuard capable drivers only
+  #define DIAG_JUMPERS_REMOVED  // Remove the jumpers to use DIAG1 as an endstop
 
   #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
