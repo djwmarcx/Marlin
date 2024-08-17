@@ -585,10 +585,8 @@
 
 // Resistor values when using MAX31865 sensors (-5) on TEMP_SENSOR_0 / 1
 #if TEMP_SENSOR_IS_MAX_TC(0)
-  #define MAX31865_SENSOR_OHMS_0                                                 \
-    100 // (Ω) Typically 100 or 1000 (PT100 or PT1000)
-  #define MAX31865_CALIBRATION_OHMS_0                                            \
-    430 // (Ω) Typically 430 for Adafruit PT100; 4300 for Adafruit PT1000
+  #define MAX31865_SENSOR_OHMS_0      100 // (Ω) Typically 100 or 1000 (PT100 or PT1000)
+  #define MAX31865_CALIBRATION_OHMS_0 430 // (Ω) Typically 430 for Adafruit PT100; 4300 for Adafruit PT1000
 #endif
 #if TEMP_SENSOR_IS_MAX_TC(1)
   #define MAX31865_SENSOR_OHMS_1      100
@@ -706,8 +704,7 @@
     #define DEFAULT_Kd 114.00
   #endif
 #else
-  #define BANG_MAX                                                               \
-    255 // Limit hotend current while in bang-bang mode; 255=full current
+  #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
 #endif
 
 /**
@@ -785,8 +782,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  *
- * With this option disabled, bang-bang will be used. BED_LIMIT_SWITCHING
- * enables hysteresis.
+ * With this option disabled, bang-bang will be used. BED_LIMIT_SWITCHING enables hysteresis.
  */
 //#define PIDTEMPBED
 
@@ -1089,10 +1085,9 @@
  * Movements very close to the center of the polar axis take more time than others.
  * This brief delay results in more material deposition due to the pressure in the nozzle.
  *
- * Current Kinematics and feedrate scaling deals with this by making the
- * movement as fast as possible. It works for slow movements but doesn't work
- * well with fast ones. A more complicated extrusion compensation must be
- * implemented.
+ * Current Kinematics and feedrate scaling deals with this by making the movement as fast
+ * as possible. It works for slow movements but doesn't work well with fast ones. A more
+ * complicated extrusion compensation must be implemented.
  *
  * Ideally, it should estimate that a long rotation near the center is ahead and will cause
  * unwanted deposition. Therefore it can compensate the extrusion beforehand.
@@ -1268,12 +1263,11 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE {500, 500, 3.3, 120}
+#define DEFAULT_MAX_FEEDRATE {400, 400, 3.3, 120}
 
 #define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES                                               \
-    {600, 600, 3.3, 120} // ...or, set your own edit limits
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1282,13 +1276,12 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION {6000, 6000, 100, 20000}
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
 
 #define LIMITED_MAX_ACCEL_EDITING // Limit edit via M201 or LCD to
 // DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES                                                  \
-    {6000, 6000, 10, 20000} // ...or, set your own edit limits
+  #define MAX_ACCEL_EDIT_VALUES       { 6000, 6000, 200, 20000 } // ...or, set your own edit limits
 #endif
 
 /**
@@ -1326,10 +1319,9 @@
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
 
-  #define LIMITED_JERK_EDITING // Limit edit via M205 or LCD to
-  // DEFAULT_aJERK * 2
+  #define LIMITED_JERK_EDITING        // Limit edit via M205 or LCD to DEFAULT_aJERK * 2
   #if ENABLED(LIMITED_JERK_EDITING)
-    #define MAX_JERK_EDIT_VALUES {10, 10, 0.3, 5} // ...or, set your own edit limits
+    #define MAX_JERK_EDIT_VALUES { 20, 20, 0.6, 10 } // ...or, set your own edit limits
   #endif
 #endif
 
@@ -3221,8 +3213,7 @@
  *  - Copy the downloaded DWIN_SET folder to the SD card.
  *
  * E3S1PRO (T5L)
- *  - Download
- * https://github.com/CrealityOfficial/Ender-3S1/archive/3S1_Plus_Screen.zip
+ *  - Download https://github.com/CrealityOfficial/Ender-3S1/archive/3S1_Plus_Screen.zip
  *  - Copy the downloaded DWIN_SET folder to the SD card.
  *
  * Flash display with DGUS Displays for Marlin:
@@ -3491,8 +3482,7 @@
 // https://reprapworld.com/products/electronics/ramps/keypad_v1_0_fully_assembled/
 //
 //#define REPRAPWORLD_KEYPAD
-//#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0 // (mm) Distance to move per
-// key-press
+//#define REPRAPWORLD_KEYPAD_MOVE_STEP 10.0 // (mm) Distance to move per key-press
 
 //
 // EasyThreeD ET-4000+ with button input and status LED
